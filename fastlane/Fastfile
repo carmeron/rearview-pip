@@ -1,32 +1,41 @@
 # Fastfile for RearViewPiP — cloud build + OTA distribution
-# Uses free Apple ID for code signing (7-day cert, ok for personal use)
+# Uses free Apple ID for code signing
 
 default_platform(:ios)
 
 platform :ios do
-  desc "Build IPA and deploy to GitHub Pages for OTA install"
+  desc "Build IPA for development"
   lane :build_and_deploy do
-    device_udid = ENV["DEVICE_UDID"]
-    device_name = ENV["DEVICE_NAME"] || "My iPad"
-
-    UI.message "🔨 Registering device..."
+    # Create profiles directory
     sh("mkdir", "-p", "profiles")
 
-    # Register the iPad UDID with the free developer account
-    # fastlane sigh handles this automatically
-    sigh(
-      adhoc: false,
+    # Get provisioning profile using Apple ID
+    # For free accounts, omit team_id — sigh auto-detects it
+    profile_opts = {
       development: true,
       force: true,
       username: ENV["APPLE_ID"],
-      app_identifier: ENV["APP_BUNDLE_ID"] || "com.rearviewpip.app",
+      app_identifier: ENV["APP_BUNDLE_ID"] || "com.rearviewpip.zyl",
       provisioning_name: "RearViewPiP Development",
       output_path: "profiles",
-      skip_certificate_verification: true,
-      readonly: false
-    )
+      skip_certificate_verification: true
+    }
+
+    # Try with team_name if TEAM_ID is set, otherwise let sigh auto-detect
+    if ENV["TEAM_ID"] && !ENV["TEAM_ID"].empty?
+      profile_opts[:team_id] = ENV["TEAM_ID"]
+    end
+
+    sigh(profile_opts)
 
     UI.message "🔨 Building IPA..."
+
+    # Build args — only set DEVELOPMENT_TEAM if we have it
+    xcargs = ["PROVISIONING_PROFILE_SPECIFIER=RearViewPiP Development"]
+    if ENV["TEAM_ID"] && !ENV["TEAM_ID"].empty?
+      xcargs << "DEVELOPMENT_TEAM=#{ENV['TEAM_ID']}"
+    end
+
     gym(
       project: "RearViewPiP.xcodeproj",
       scheme: "RearViewPiP",
@@ -35,25 +44,9 @@ platform :ios do
       output_name: "RearViewPiP.ipa",
       include_bitcode: false,
       include_symbols: false,
-      xcargs: [
-        "DEVELOPMENT_TEAM=#{ENV['TEAM_ID']}",
-        "PROVISIONING_PROFILE_SPECIFIER=RearViewPiP Development"
-      ].join(" ")
+      xcargs: xcargs.join(" ")
     )
 
     UI.message "✅ IPA built: build/RearViewPiP.ipa"
-  end
-
-  desc "Refresh provisioning profile (weekly)"
-  lane :refresh_profile do
-    sigh(
-      development: true,
-      force: true,
-      username: ENV["APPLE_ID"],
-      app_identifier: ENV["APP_BUNDLE_ID"] || "com.rearviewpip.app",
-      provisioning_name: "RearViewPiP Development",
-      output_path: "profiles",
-      skip_certificate_verification: true
-    )
   end
 end

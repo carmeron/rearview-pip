@@ -238,6 +238,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					D1F14FA4F82066789F183C9E = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = B2AE13FAF77DAC906E8205D4 /* Build configuration list for PBXProject "RearViewPiP" */;
@@ -301,8 +304,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.zyl;
 			};
 			name = Release;
 		};
@@ -310,8 +314,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.zyl;
 			};
 			name = Debug;
 		};
