@@ -37,7 +37,7 @@ jobs:
         run: fastlane build_and_deploy
         env:
           FASTLANE_USER: ${{ secrets.APPLE_ID }}
-          FASTLANE_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
           APPLE_ID: ${{ secrets.APPLE_ID }}
           DEVICE_UDID: ${{ secrets.DEVICE_UDID }}
           TEAM_ID: ${{ secrets.TEAM_ID }}
