@@ -1,0 +1,66 @@
+name: Build & Deploy to iPad
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:      # Manual trigger from GitHub web UI
+  schedule:
+    - cron: "0 0 * * 0"  # Auto-rebuild every Sunday (7-day cert limit)
+
+jobs:
+  build:
+    runs-on: macos-15     # Apple Silicon runner, supports iPadOS 26
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Install fastlane
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Create temporary keychain
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+          security set-keychain-settings -t 3600 -u build.keychain
+
+      - name: Authenticate with Apple ID
+        run: |
+          # Store Apple ID credentials in temporary keychain for fastlane
+          security add-generic-password \
+            -s "deliver.zyl.job@foxmail.com" \
+            -a "zyl.job@foxmail.com" \
+            -w "${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}" \
+            -T /usr/bin/security
+
+      - name: Build IPA
+        timeout-minutes: 20
+        run: |
+          bundle exec fastlane build_and_deploy
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          DEVICE_UDID: ${{ secrets.DEVICE_UDID }}
+          APP_BUNDLE_ID: "com.rearviewpip.zyl"
+
+      - name: Upload IPA as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RearViewPiP
+          path: build/RearViewPiP.ipa
+          retention-days: 7
+
+      - name: Clean up keychain
+        if: always()
+        run: |
+          security delete-keychain build.keychain || true

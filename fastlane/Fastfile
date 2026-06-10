@@ -1,0 +1,59 @@
+# Fastfile for RearViewPiP — cloud build + OTA distribution
+# Uses free Apple ID for code signing (7-day cert, ok for personal use)
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Build IPA and deploy to GitHub Pages for OTA install"
+  lane :build_and_deploy do
+    device_udid = ENV["DEVICE_UDID"]
+    device_name = ENV["DEVICE_NAME"] || "My iPad"
+
+    UI.message "🔨 Registering device..."
+    sh("mkdir", "-p", "profiles")
+
+    # Register the iPad UDID with the free developer account
+    # fastlane sigh handles this automatically
+    sigh(
+      adhoc: false,
+      development: true,
+      force: true,
+      username: ENV["APPLE_ID"],
+      app_identifier: ENV["APP_BUNDLE_ID"] || "com.rearviewpip.app",
+      provisioning_name: "RearViewPiP Development",
+      output_path: "profiles",
+      skip_certificate_verification: true,
+      readonly: false
+    )
+
+    UI.message "🔨 Building IPA..."
+    gym(
+      project: "RearViewPiP.xcodeproj",
+      scheme: "RearViewPiP",
+      export_method: "development",
+      output_directory: "build",
+      output_name: "RearViewPiP.ipa",
+      include_bitcode: false,
+      include_symbols: false,
+      xcargs: [
+        "DEVELOPMENT_TEAM=#{ENV['TEAM_ID']}",
+        "PROVISIONING_PROFILE_SPECIFIER=RearViewPiP Development"
+      ].join(" ")
+    )
+
+    UI.message "✅ IPA built: build/RearViewPiP.ipa"
+  end
+
+  desc "Refresh provisioning profile (weekly)"
+  lane :refresh_profile do
+    sigh(
+      development: true,
+      force: true,
+      username: ENV["APPLE_ID"],
+      app_identifier: ENV["APP_BUNDLE_ID"] || "com.rearviewpip.app",
+      provisioning_name: "RearViewPiP Development",
+      output_path: "profiles",
+      skip_certificate_verification: true
+    )
+  end
+end

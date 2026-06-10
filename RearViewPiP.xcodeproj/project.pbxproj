@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		009D747688E1103D9E927CF4 /* ErrorLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355DF94691ED9DBF13D70C7D /* ErrorLog.swift */; };
+		03BD83896859D16B9C13D32A /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565D5D7A777F0F517E6119F5 /* AppConfiguration.swift */; };
+		1B5DAE8E27257A160BD4C9AF /* GuideLineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C46BC0D0278D2D5F3B9793 /* GuideLineStyle.swift */; };
+		29E01CC570C7AD42AF7CE5B4 /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880501AB30184DDBB2D30F70 /* ErrorLogger.swift */; };
+		2EE730AE8896D561D0C0A988 /* ContentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C351D5DE5A544A39E0B5C /* ContentRenderer.swift */; };
+		36665C7C5F3567A7674E0448 /* PiPWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169D83AF08B9A24202232913 /* PiPWindowController.swift */; };
+		449D73D8CBD3BB55066A8330 /* PiPContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC77B119F340BE93DDF84C3 /* PiPContent.swift */; };
+		45E56F56BBDFA70BEA0C2C8D /* ThermalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6824932C313702CBEA9E8430 /* ThermalManager.swift */; };
+		503DCBB242CA45BFA9561F71 /* VideoCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD60540E511EA0D7B54A07 /* VideoCaptureSession.swift */; };
+		512431B056F5820C4BC051E3 /* FrameMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE1C561FBD244AFF03EA596 /* FrameMetrics.swift */; };
+		55EC3BF975DBB2E74B8495E5 /* VideoFrameAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211E8B767B9DE4F18C010C8 /* VideoFrameAnalyzer.swift */; };
+		573A888CB1B2D6F5193467F8 /* PixelBufferPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06234C3DE9BCFBD259449A69 /* PixelBufferPool.swift */; };
+		6DEC4748F425FE303944B2A9 /* VideoStreamState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7877F3F569317BE47A27A5 /* VideoStreamState.swift */; };
+		742966BDAD224ABBFA278B85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53283BE8B0364ECECD3AAAB /* SceneDelegate.swift */; };
+		87FE9D41D977A06801E35392 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22BF9CEC1234E0C94C67332 /* SettingsViewController.swift */; };
+		904BD5CB910F8E7227805D5C /* SignalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9224888F39785A32E75DB792 /* SignalState.swift */; };
+		909D4F312F84C4C6F9A3A947 /* SignalStateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CF53897DD5AD732B079F3 /* SignalStateDetector.swift */; };
+		AA6017FE458B6F39E2384FA1 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DEE3F1AAB7AFC79D3A4511 /* ConfigurationManager.swift */; };
+		AAB0A2758677B98A6BAF094C /* BackgroundAudioKeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57035AE36C270072655B60BE /* BackgroundAudioKeepAlive.swift */; };
+		ADC5ABFED2B6BBCD9B0DAD79 /* GuideLineRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F188DD897C2D05F9EB399 /* GuideLineRenderer.swift */; };
+		AF5802410C5EE186E4D687FA /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17A472AD9D5A060EC0FCD9 /* DeviceManager.swift */; };
+		B4FE8D5D27502389EE57B239 /* RearViewPiPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C13B441C6F111F9DC3305 /* RearViewPiPError.swift */; };
+		D660C33E4786C67D4C536623 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD93C8A4495F8C26F41CE6E9 /* MainViewController.swift */; };
+		E2E01707BB174527B91EEAE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA242668DC3CA610191B7001 /* AppDelegate.swift */; };
+		E821E7CD165357FE588C49FB /* DetectionThresholds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CE641ED0B04733755141D8 /* DetectionThresholds.swift */; };
+		F7DC4E1E8176825BD05CA608 /* PerformanceMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2220911851FC0A16137E3CB /* PerformanceMetrics.swift */; };
+		FAD446825E513C26197ACCD0 /* SetupWizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C0FCCEEEC76B28535A8D5 /* SetupWizardViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03DEE3F1AAB7AFC79D3A4511 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		06234C3DE9BCFBD259449A69 /* PixelBufferPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelBufferPool.swift; sourceTree = "<group>"; };
+		169D83AF08B9A24202232913 /* PiPWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiPWindowController.swift; sourceTree = "<group>"; };
+		1DC77B119F340BE93DDF84C3 /* PiPContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiPContent.swift; sourceTree = "<group>"; };
+		2003F3409437DB9C3AD824A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2DE1C561FBD244AFF03EA596 /* FrameMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameMetrics.swift; sourceTree = "<group>"; };
+		355DF94691ED9DBF13D70C7D /* ErrorLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLog.swift; sourceTree = "<group>"; };
+		3B7877F3F569317BE47A27A5 /* VideoStreamState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStreamState.swift; sourceTree = "<group>"; };
+		422C0FCCEEEC76B28535A8D5 /* SetupWizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupWizardViewController.swift; sourceTree = "<group>"; };
+		453C351D5DE5A544A39E0B5C /* ContentRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRenderer.swift; sourceTree = "<group>"; };
+		565D5D7A777F0F517E6119F5 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		57035AE36C270072655B60BE /* BackgroundAudioKeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAudioKeepAlive.swift; sourceTree = "<group>"; };
+		5C17A472AD9D5A060EC0FCD9 /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
+		610EF980600157F32AF4BBE0 /* RearViewPiP.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RearViewPiP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6824932C313702CBEA9E8430 /* ThermalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalManager.swift; sourceTree = "<group>"; };
+		76C46BC0D0278D2D5F3B9793 /* GuideLineStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLineStyle.swift; sourceTree = "<group>"; };
+		880501AB30184DDBB2D30F70 /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
+		8B1F188DD897C2D05F9EB399 /* GuideLineRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideLineRenderer.swift; sourceTree = "<group>"; };
+		90CE641ED0B04733755141D8 /* DetectionThresholds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionThresholds.swift; sourceTree = "<group>"; };
+		9224888F39785A32E75DB792 /* SignalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalState.swift; sourceTree = "<group>"; };
+		B2220911851FC0A16137E3CB /* PerformanceMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMetrics.swift; sourceTree = "<group>"; };
+		D22CF53897DD5AD732B079F3 /* SignalStateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalStateDetector.swift; sourceTree = "<group>"; };
+		D3AD60540E511EA0D7B54A07 /* VideoCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureSession.swift; sourceTree = "<group>"; };
+		D53283BE8B0364ECECD3AAAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DA242668DC3CA610191B7001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E211E8B767B9DE4F18C010C8 /* VideoFrameAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameAnalyzer.swift; sourceTree = "<group>"; };
+		E30C13B441C6F111F9DC3305 /* RearViewPiPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RearViewPiPError.swift; sourceTree = "<group>"; };
+		F22BF9CEC1234E0C94C67332 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FD93C8A4495F8C26F41CE6E9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02A78419B402507DFE77531E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				880501AB30184DDBB2D30F70 /* ErrorLogger.swift */,
+				6824932C313702CBEA9E8430 /* ThermalManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		11F78C63F8FB5DEAA1582A2D /* PiP */ = {
+			isa = PBXGroup;
+			children = (
+				57035AE36C270072655B60BE /* BackgroundAudioKeepAlive.swift */,
+				453C351D5DE5A544A39E0B5C /* ContentRenderer.swift */,
+				8B1F188DD897C2D05F9EB399 /* GuideLineRenderer.swift */,
+				169D83AF08B9A24202232913 /* PiPWindowController.swift */,
+			);
+			path = PiP;
+			sourceTree = "<group>";
+		};
+		15CE6D7726837CDEDC36688F /* RearViewPiP */ = {
+			isa = PBXGroup;
+			children = (
+				B5490934CCF0FD5C1EF93D0C /* App */,
+				E54A4E15A82F2243F8E68C55 /* Configuration */,
+				945154B636FCE8207861E11D /* Core */,
+				3543DC2A88A06D3550D146F3 /* Models */,
+				11F78C63F8FB5DEAA1582A2D /* PiP */,
+				458BCE9B9E41D6CED85C71B8 /* UI */,
+				02A78419B402507DFE77531E /* Utilities */,
+			);
+			name = RearViewPiP;
+			path = Sources/RearViewPiP;
+			sourceTree = "<group>";
+		};
+		1FA532EDE9C3304FFD82CCDE /* VideoAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				E211E8B767B9DE4F18C010C8 /* VideoFrameAnalyzer.swift */,
+			);
+			path = VideoAnalysis;
+			sourceTree = "<group>";
+		};
+		3177A7B79152EB70A717E0E2 /* DeviceManagement */ = {
+			isa = PBXGroup;
+			children = (
+				5C17A472AD9D5A060EC0FCD9 /* DeviceManager.swift */,
+			);
+			path = DeviceManagement;
+			sourceTree = "<group>";
+		};
+		3543DC2A88A06D3550D146F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				565D5D7A777F0F517E6119F5 /* AppConfiguration.swift */,
+				90CE641ED0B04733755141D8 /* DetectionThresholds.swift */,
+				355DF94691ED9DBF13D70C7D /* ErrorLog.swift */,
+				2DE1C561FBD244AFF03EA596 /* FrameMetrics.swift */,
+				76C46BC0D0278D2D5F3B9793 /* GuideLineStyle.swift */,
+				B2220911851FC0A16137E3CB /* PerformanceMetrics.swift */,
+				1DC77B119F340BE93DDF84C3 /* PiPContent.swift */,
+				E30C13B441C6F111F9DC3305 /* RearViewPiPError.swift */,
+				9224888F39785A32E75DB792 /* SignalState.swift */,
+				3B7877F3F569317BE47A27A5 /* VideoStreamState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		458BCE9B9E41D6CED85C71B8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F22BF9CEC1234E0C94C67332 /* SettingsViewController.swift */,
+				422C0FCCEEEC76B28535A8D5 /* SetupWizardViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6B285E7C577815811738E977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				610EF980600157F32AF4BBE0 /* RearViewPiP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		945154B636FCE8207861E11D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3177A7B79152EB70A717E0E2 /* DeviceManagement */,
+				EBB89CA84A3829813515F187 /* SignalDetection */,
+				1FA532EDE9C3304FFD82CCDE /* VideoAnalysis */,
+				CFF1F0D8046E74886B1A15ED /* VideoCapture */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B5490934CCF0FD5C1EF93D0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DA242668DC3CA610191B7001 /* AppDelegate.swift */,
+				2003F3409437DB9C3AD824A0 /* Info.plist */,
+				FD93C8A4495F8C26F41CE6E9 /* MainViewController.swift */,
+				D53283BE8B0364ECECD3AAAB /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CFF1F0D8046E74886B1A15ED /* VideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				06234C3DE9BCFBD259449A69 /* PixelBufferPool.swift */,
+				D3AD60540E511EA0D7B54A07 /* VideoCaptureSession.swift */,
+			);
+			path = VideoCapture;
+			sourceTree = "<group>";
+		};
+		E54A4E15A82F2243F8E68C55 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				03DEE3F1AAB7AFC79D3A4511 /* ConfigurationManager.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		EBB89CA84A3829813515F187 /* SignalDetection */ = {
+			isa = PBXGroup;
+			children = (
+				D22CF53897DD5AD732B079F3 /* SignalStateDetector.swift */,
+			);
+			path = SignalDetection;
+			sourceTree = "<group>";
+		};
+		F7D5555F4CC5F5DD3779E5A7 = {
+			isa = PBXGroup;
+			children = (
+				15CE6D7726837CDEDC36688F /* RearViewPiP */,
+				6B285E7C577815811738E977 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1F14FA4F82066789F183C9E /* RearViewPiP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFE31332A3501AD1B85FB639 /* Build configuration list for PBXNativeTarget "RearViewPiP" */;
+			buildPhases = (
+				32FE1F79BF81CC339F698918 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RearViewPiP;
+			packageProductDependencies = (
+			);
+			productName = RearViewPiP;
+			productReference = 610EF980600157F32AF4BBE0 /* RearViewPiP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		110AD4F64228D5D9B0D74497 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = B2AE13FAF77DAC906E8205D4 /* Build configuration list for PBXProject "RearViewPiP" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F7D5555F4CC5F5DD3779E5A7;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6B285E7C577815811738E977 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1F14FA4F82066789F183C9E /* RearViewPiP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32FE1F79BF81CC339F698918 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BD83896859D16B9C13D32A /* AppConfiguration.swift in Sources */,
+				E2E01707BB174527B91EEAE9 /* AppDelegate.swift in Sources */,
+				AAB0A2758677B98A6BAF094C /* BackgroundAudioKeepAlive.swift in Sources */,
+				AA6017FE458B6F39E2384FA1 /* ConfigurationManager.swift in Sources */,
+				2EE730AE8896D561D0C0A988 /* ContentRenderer.swift in Sources */,
+				E821E7CD165357FE588C49FB /* DetectionThresholds.swift in Sources */,
+				AF5802410C5EE186E4D687FA /* DeviceManager.swift in Sources */,
+				009D747688E1103D9E927CF4 /* ErrorLog.swift in Sources */,
+				29E01CC570C7AD42AF7CE5B4 /* ErrorLogger.swift in Sources */,
+				512431B056F5820C4BC051E3 /* FrameMetrics.swift in Sources */,
+				ADC5ABFED2B6BBCD9B0DAD79 /* GuideLineRenderer.swift in Sources */,
+				1B5DAE8E27257A160BD4C9AF /* GuideLineStyle.swift in Sources */,
+				D660C33E4786C67D4C536623 /* MainViewController.swift in Sources */,
+				F7DC4E1E8176825BD05CA608 /* PerformanceMetrics.swift in Sources */,
+				449D73D8CBD3BB55066A8330 /* PiPContent.swift in Sources */,
+				36665C7C5F3567A7674E0448 /* PiPWindowController.swift in Sources */,
+				573A888CB1B2D6F5193467F8 /* PixelBufferPool.swift in Sources */,
+				B4FE8D5D27502389EE57B239 /* RearViewPiPError.swift in Sources */,
+				742966BDAD224ABBFA278B85 /* SceneDelegate.swift in Sources */,
+				87FE9D41D977A06801E35392 /* SettingsViewController.swift in Sources */,
+				FAD446825E513C26197ACCD0 /* SetupWizardViewController.swift in Sources */,
+				904BD5CB910F8E7227805D5C /* SignalState.swift in Sources */,
+				909D4F312F84C4C6F9A3A947 /* SignalStateDetector.swift in Sources */,
+				45E56F56BBDFA70BEA0C2C8D /* ThermalManager.swift in Sources */,
+				503DCBB242CA45BFA9561F71 /* VideoCaptureSession.swift in Sources */,
+				55EC3BF975DBB2E74B8495E5 /* VideoFrameAnalyzer.swift in Sources */,
+				6DEC4748F425FE303944B2A9 /* VideoStreamState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		51B78408DD9D12C73E3B21B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.app;
+			};
+			name = Release;
+		};
+		91B367FF60B1704FB6EDA2E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rearviewpip.app;
+			};
+			name = Debug;
+		};
+		B358F90841C66833C6C965D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		FCA58B278C7906103F87A1DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Sources/RearViewPiP/App/Info.plist;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFE31332A3501AD1B85FB639 /* Build configuration list for PBXNativeTarget "RearViewPiP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B367FF60B1704FB6EDA2E9 /* Debug */,
+				51B78408DD9D12C73E3B21B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B2AE13FAF77DAC906E8205D4 /* Build configuration list for PBXProject "RearViewPiP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B358F90841C66833C6C965D0 /* Debug */,
+				FCA58B278C7906103F87A1DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 110AD4F64228D5D9B0D74497 /* Project object */;
+}

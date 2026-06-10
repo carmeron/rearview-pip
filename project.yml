@@ -1,0 +1,35 @@
+name: RearViewPiP
+options:
+  bundleIdPrefix: com.rearviewpip
+  deploymentTarget:
+    iPadOS: "15.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "2"
+    INFOPLIST_FILE: Sources/RearViewPiP/App/Info.plist
+
+targets:
+  RearViewPiP:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources/RearViewPiP
+        type: group
+    resources:
+      - path: Resources
+        type: group
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rearviewpip.zyl
+        INFOPLIST_FILE: Sources/RearViewPiP/App/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+    configs:
+      debug:
+        SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      release:
+        SWIFT_OPTIMIZATION_LEVEL: "-O"
+        SWIFT_COMPILATION_MODE: wholemodule

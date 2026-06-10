@@ -1,0 +1,4 @@
+# Appfile for RearViewPiP
+app_identifier(ENV["APP_BUNDLE_ID"] || "com.rearviewpip.app")
+apple_id(ENV["APPLE_ID"])
+team_id(ENV["TEAM_ID"])
